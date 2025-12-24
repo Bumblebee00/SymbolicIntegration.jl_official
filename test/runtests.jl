@@ -14,7 +14,7 @@ using Symbolics
         @test isequal(expand(integrate(x, x)      - (1//2)*(x^2))    , 0)
         @test isequal(expand(integrate(x^2, x)    - (1//3)*(x^3))    , 0)
         @test isequal(expand(integrate(1/x, x)    - log(x))          , 0)
-        @test isequal(expand(integrate(exp(x), x) - exp(x))          , 0)
+        @test isequal(simplify(integrate(exp(x), x) - exp(x))          , 0)
         @test isequal(expand(integrate(log(x), x) - (-x + x*log(x))) , 0)
     end
     
